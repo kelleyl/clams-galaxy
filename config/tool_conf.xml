@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toolbox monitor="true">
+  <section id="getext" name="Get Data">
+    <tool file="data_source/upload.xml" />
+  </section>
+  <section id="send" name="Send Data">
+    <tool file="cloud/send.xml" />
+  </section>
+  <section id="video" name="Video Tools">
+    <tool file="videotools/bars.xml" />
+      <tool file="videotools/bottom_thirds.xml" />
+      <tool file="videotools/elf.xml" />
+  </section>
+  <section id="audio" name="Audio Tools">
+  </section>
+  <section id="text" name="Text Tools">
+  </section>
+  <section id="Multimodal" name="Multimodal Tools">
+  </section>
+</toolbox>
