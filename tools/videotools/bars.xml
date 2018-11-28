@@ -1,0 +1,15 @@
+<tool id="bars" name="Bars Template Matcher" version="0.0.1">
+  <description>
+    bars detection using template matching
+  </description>
+  <command interpreter="python">bars.py $input $output</command>
+  <inputs>
+    <param name="input" type="data" format="binary" label="input"/>
+  </inputs>
+  <outputs>
+    <data name="output" format="" label="Bars detection"/>
+  </outputs>
+  <help>
+    Bars Detection
+  </help>
+</tool>

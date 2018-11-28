@@ -1,0 +1,15 @@
+<tool id="chyron" name="Bottom Thirds to Text" version="0.0.1">
+  <description>
+    apply OCR to bottom thirds
+  </description>
+  <command interpreter="python">bottom_thirds.py $input $output</command>
+  <inputs>
+    <param name="input" type="data" format="binary" label="input"/>
+  </inputs>
+  <outputs>
+    <data name="output" format="" label="Bottom Thirds"/>
+  </outputs>
+  <help>
+    Bottom Thirds
+  </help>
+</tool>
