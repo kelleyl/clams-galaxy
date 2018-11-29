@@ -1,0 +1,15 @@
+<tool id="MMIF" name="MMIF_wrapper" version="0.0.1">
+  <description>
+    wrap video in MMIF
+  </description>
+  <command interpreter="python">MMIF_wrapper.py $input $output</command>
+  <inputs>
+    <param name="input" type="data" format="binary" label="Video Input"/>
+  </inputs>
+  <outputs>
+    <data name="output" format="json" label="Wrapped MMIF"/>
+  </outputs>
+  <help>
+    Wrap video in MMIF
+  </help>
+</tool>

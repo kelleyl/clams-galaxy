@@ -1,0 +1,16 @@
+<tool id="slatedetection" name="Slate Detection" version="0.0.1">
+  <description>
+    detect frames that look like slates
+  </description>
+  <command interpreter="python">slate_detection.py $input $miff $output</command>
+  <inputs>
+    <param name="input" type="data" format="binary" label="Video"/>
+      <param name="miff" type="data" format="json" label="MMIF" />
+  </inputs>
+  <outputs>
+    <data name="output" format="json" label="Slate Detection"/>
+  </outputs>
+  <help>
+    Slate Detection
+  </help>
+</tool>

@@ -2,12 +2,13 @@
   <description>
     apply OCR to bottom thirds
   </description>
-  <command interpreter="python">bottom_thirds.py $input $output</command>
+  <command interpreter="python">bottom_thirds.py $input $miff $output</command>
   <inputs>
-    <param name="input" type="data" format="binary" label="input"/>
+    <param name="input" type="data" format="binary" label="Video"/>
+      <param name="miff" type="data" format="json" label="MMIF" />
   </inputs>
   <outputs>
-    <data name="output" format="" label="Bottom Thirds"/>
+    <data name="output" format="json" label="Bottom Thirds"/>
   </outputs>
   <help>
     Bottom Thirds

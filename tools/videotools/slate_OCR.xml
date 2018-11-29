@@ -1,0 +1,16 @@
+<tool id="SLATE_OCR2" name="Slate OCR with Tesseract" version="0.0.1">
+  <description>
+    video to slate OCR
+  </description>
+  <command interpreter="python">slate_OCR.py $input $miff $output</command>
+  <inputs>
+    <param name="input" type="data" format="binary" label="input"/>
+      <param name="miff" type="data" format="json" label="MMIF" />
+  </inputs>
+  <outputs>
+    <data name="output" format="json" label="Slate OCR"/>
+  </outputs>
+  <help>
+      Slate OCR
+  </help>
+</tool>

@@ -2,12 +2,13 @@
   <description>
     bars detection using template matching
   </description>
-  <command interpreter="python">bars.py $input $output</command>
+  <command interpreter="python">bars.py $input $miff $output</command>
   <inputs>
-    <param name="input" type="data" format="binary" label="input"/>
+      <param name="input" type="data" format="binary" label="Video"/>
+      <param name="miff" type="data" format="json" label="MMIF" />
   </inputs>
   <outputs>
-    <data name="output" format="" label="Bars detection"/>
+    <data name="output" format="json" label="Bars"/>
   </outputs>
   <help>
     Bars Detection

@@ -1,0 +1,15 @@
+<tool id="processSlate" name="Process Slate Text" version="0.0.1">
+  <description>
+      process results from Slate OCR
+  </description>
+  <command interpreter="python">process_slate_text.py $miff $output</command>
+  <inputs>
+      <param name="miff" type="data" format="json" label="MMIF"/>
+  </inputs>
+  <outputs>
+    <data name="output" format="json" label="Slate Text"/>
+  </outputs>
+  <help>
+    Slate Processing
+  </help>
+</tool>

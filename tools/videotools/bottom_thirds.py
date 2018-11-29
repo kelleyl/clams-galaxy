@@ -3,7 +3,7 @@ import os
 import cv2
 import time
 import json
-
+import sys
 import numpy as np
 from pytesseract import pytesseract, TesseractError
 from difflib import SequenceMatcher
@@ -17,7 +17,9 @@ class Bottom_Thirds(Service):
         self.sample_ratio = 30
         self.psm = '6'
         self.oem = None
-        super().__init__(video)
+        #super().__init__(video)
+        #for python2
+        super(Bottom_Thirds, self).__init__(video, miff)
 
 
     def run_service(self):
@@ -77,4 +79,13 @@ class Bottom_Thirds(Service):
                         else:
                             is_new = True
             counter += 1
-        return {"bottom_thirds":results}
+        #return {"bottom_thirds":results}
+        return self.miff.update({"bottom_thirds":results})
+
+if __name__ == '__main__':
+    inp = sys.argv[1]
+    miff = sys.argv[2]
+    out = sys.argv[3]
+    bt = Bottom_Thirds(inp, miff)
+    with open(out, 'w+') as fout:
+        fout.write(str(bt.run_service()))
