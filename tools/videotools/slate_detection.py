@@ -28,14 +28,22 @@ class SlateDetection(Service):
         with open(self.miff) as m:
             miff_contents = json.load(m)
         cap = cv2.VideoCapture(self.video)
-        for i in range(1000):
-            _, frame = cap.read()
-            if i%10 == 0:
-                frame_hist = cv2.calcHist([frame], [0, 1, 2], None, [8, 8, 8],
+        counter = 0
+        while cap.isOpened():
+            ret, frame = cap.read()
+            if not ret:
+                break
+            if counter % self.sample_ratio == 0:
+                try:
+                    frame_hist = cv2.calcHist([frame], [0, 1, 2], None, [8, 8, 8],
                                           [0, 256, 0, 256, 0, 256])
-                frame_hist = cv2.normalize(frame_hist, frame_hist).flatten()
-                if (cv2.compareHist(self.hist, frame_hist, 0) >.98):
-                    result.append(i)
+                    frame_hist = cv2.normalize(frame_hist, frame_hist).flatten()
+                    if (cv2.compareHist(self.hist, frame_hist, 0) >.98):
+                        result.append(counter)
+                except Exception:
+                    counter += 1
+                    continue
+            counter += 1
         miff_contents["slate_detection"] = result
         return miff_contents
 
