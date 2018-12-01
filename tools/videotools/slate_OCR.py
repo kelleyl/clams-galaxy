@@ -17,6 +17,11 @@ class slate_OCR(Service):
         super(slate_OCR, self).__init__(video, miff)
 
     def run_service(self):
+        with open(self.miff) as m:
+            miff_contents = json.load(m)
+
+        if "slate_detection" not in miff_contents:
+            miff_contents["slate_OCR":"ERROR:no slate frames detected, run slate detection first."]
         def process_image(f):
             '''
             Process the image, right now this is just inverting the colors, which helps for some frames
@@ -41,25 +46,15 @@ class slate_OCR(Service):
 
         counter = 0
         output = {}
-        while cap.isOpened():
-            if counter > self.stop_frame:
-                break
+        candidates = miff_contents["slate_detection"]
+        for candidate in candidates:
+            cap.set(cv2.CAP_PROP_POS_FRAMES, candidate)
             ret, f = cap.read()
-            f = invert_image(f)
+            processed = process_image(f)
+            res = pytesseract.image_to_string(processed)
+            if len(res) > 20:
+                output[candidate] = res
 
-            if not ret:
-                break
-            if counter % self.sample_ratio == 0:
-                # resize the frame, maintaining the aspect ratio
-                f = imutils.resize(f, width=900)
-                processed = process_image(f)
-                result = pytesseract.image_to_string(processed)
-                output[counter] = result
-            counter += 1
-
-        with open(self.miff) as m:
-            miff_string = m.read()
-        miff_contents = json.loads(miff_string)
         miff_contents.update({"slate_OCR":output})
         return miff_contents
 

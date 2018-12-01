@@ -1,7 +1,5 @@
 import datetime
-import os
 import cv2
-import time
 import json
 import sys
 import numpy as np

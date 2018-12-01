@@ -1,16 +1,29 @@
-<tool id="slatedetection" name="Slate Detection" version="0.0.1">
+<tool id="slates" name="Slate Detection" version="0.0.1">
   <description>
-    detect frames that look like slates
+    detect slates using template matching.
   </description>
-  <command interpreter="python">slate_detection.py $input $miff $output</command>
+  <command interpreter="python">slate_detection.py $input $miff $output $advanced.choice $advanced.full_video $advanced.search_start_frame</command>
   <inputs>
-    <param name="input" type="data" format="binary" label="Video"/>
+      <param name="input" type="data" format="binary" label="Video"/>
       <param name="miff" type="data" format="json" label="MMIF" />
+
+      <conditional name="advanced">
+        <param name="choice" type="boolean" label="Advanced Options" help="" truevalue="1" falsevalue="0"/>
+          <when value="0">
+            <param name="full_video" type="boolean" label="Search full video?" help="Search for the multiple instances of slates throughout the video?" truevalue="1" falsevalue="0" />
+            <param name="search_start_frame" type="integer" value="0" label="Start Frame" help="Frame to start the search. Default is 0, to search full video." />
+          </when>
+
+        <when value="1">
+            <param name="full_video" type="boolean" label="Search full video?" help="Search for the multiple instances of slates throughout the video?" truevalue="1" falsevalue="0" />
+            <param name="search_start_frame" type="integer" value="0" label="Start Frame" help="Frame to start the search. Default is 0, to search full video."/>
+        </when>
+      </conditional>
   </inputs>
   <outputs>
-    <data name="output" format="json" label="Slate Detection"/>
+    <data name="output" format="json" label="Slates"/>
   </outputs>
   <help>
-    Slate Detection
+      Slate Detection
   </help>
 </tool>

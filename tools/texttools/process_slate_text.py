@@ -9,14 +9,12 @@ class Process_Slate(Service):
         super(Process_Slate, self).__init__(video, miff)
 
     def run_service(self):
-        with open(self.miff) as f:
-            miff_string = f.read()
-        miff_contents = json.loads(miff_string)
-        #OCR_results = miff_contents["slate_OCR"]
-        HARDCODED_OCR_RESULT = "ON THE RECORD\n\n#000\n\nRecord: 1 1/ 13/ 92\nAir : 11/15/92\nRepeat: 11/16/92\n\nDirector: UNGER\nProducer: DOUGLAS"
-        result_lines = HARDCODED_OCR_RESULT.split("\n")
+        with open(self.miff) as m:
+            miff_contents = json.load(m)
+        OCR_result = miff_contents["slate_OCR"][miff_contents["slate_OCR"].keys()[0]] # right now we're just picking the first result in the list, but we should do something more sophisticated
+        OCR_lines = OCR_result.split('\n')
         ocr_result_dict = {}
-        for line in result_lines:
+        for line in OCR_lines:
             if ":" in line:
                 k, v = line.split(":", 1)
                 ocr_result_dict[k] = v
