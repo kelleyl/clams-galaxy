@@ -1,0 +1,15 @@
+<tool id="demux" name="Demux" version="0.0.1">
+  <description>
+      This tool extracts the audio track from a video file
+  </description>
+  <command interpreter="python3">test.py $input $output</command>
+  <inputs>
+      <param name="input" type="data" format="json" label="MMIF"/>
+  </inputs>
+  <outputs>
+    <data name="output" format="json" label="Audio"/>
+  </outputs>
+  <help>
+      demux
+  </help>
+</tool>

@@ -739,6 +739,7 @@ class Registry(object):
         # Default values.
         if not self.datatypes_by_extension:
             self.datatypes_by_extension = {
+                'mp4'           : binary.mp4(),
                 'ab1'           : binary.Ab1(),
                 'axt'           : sequence.Axt(),
                 'bam'           : binary.Bam(),

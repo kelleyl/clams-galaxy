@@ -31,7 +31,7 @@ config1 = """\
     <params>
         <param type="dataset" var_name_in_template="hda" required="true">dataset_id</param>
     </params>
-    <template>scatterplot.mako</template>
+    <template>videoplugin.mako</template>
 </visualization>
 """
 

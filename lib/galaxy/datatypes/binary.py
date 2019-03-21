@@ -198,6 +198,8 @@ class CompressedZipArchive(CompressedArchive):
         except Exception:
             return "Compressed zip file (%s)" % (nice_size(dataset.get_size()))
 
+class mp4(Binary):
+    file_ext = "mp4"
 
 class GenericAsn1Binary(Binary):
     """Class for generic ASN.1 binary format"""

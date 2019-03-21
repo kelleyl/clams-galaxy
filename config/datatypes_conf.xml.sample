@@ -692,6 +692,7 @@
     <datatype extension="ideaspre" type="galaxy.datatypes.genetics:IdeasPre" display_in_upload="true"/>
     <!-- End IDEAS datatypes -->
     <datatype extension="sbml" type="galaxy.datatypes.xml:Sbml" mimetype="application/xml" display_in_upload="true"/>
+    <datatype extension="mp4" type="galaxy.datatypes.binary:mp4" mimetype="video/mp4" display_in_upload="true"/>
   </registration>
   <sniffers>
     <!--
@@ -722,6 +723,8 @@
     <sniffer type="galaxy.datatypes.constructive_solid_geometry:VtkBinary"/>
     <sniffer type="galaxy.datatypes.interval:ScIdx"/>
     <sniffer type="galaxy.datatypes.tabular:Vcf"/>
+    <sniffer type="galaxy.datatypes.binary:mp4"/>
+
     <sniffer type="galaxy.datatypes.binary:TwoBit"/>
     <sniffer type="galaxy.datatypes.binary:GeminiSQLite"/>
     <sniffer type="galaxy.datatypes.binary:MzSQlite"/>

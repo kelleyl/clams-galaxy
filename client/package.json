@@ -25,6 +25,7 @@
     "bootstrap-vue": "^2.0.0-rc.11",
     "d3": "3",
     "decode-uri-component": "^0.2.0",
+    "diva": "0.0.35",
     "font-awesome": "^4.7.0",
     "gulp-uglify": "^3.0.1",
     "handsontable": "^2.0.0",

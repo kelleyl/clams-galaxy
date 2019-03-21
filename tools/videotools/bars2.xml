@@ -1,0 +1,15 @@
+<tool id="bars2" name="Bars SSIM Matcher" version="0.0.1">
+  <description>
+    bars detection using structrual similarity
+  </description>
+  <command interpreter="python">bars2.py $miff $output</command>
+  <inputs>
+      <param name="miff" type="data" format="json" label="MMIF" />
+  </inputs>
+  <outputs>
+    <data name="output" format="json" label="Bars"/>
+  </outputs>
+  <help>
+    Bars Detection
+  </help>
+</tool>

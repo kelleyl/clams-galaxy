@@ -1,0 +1,15 @@
+<tool id="faces" name="Face Detection" version="0.0.1">
+  <description>
+      Detect faces with dlib.
+  </description>
+  <command interpreter="python3">test.py $input $output</command>
+  <inputs>
+      <param name="input" type="data" format="json" label="MMIF"/>
+  </inputs>
+  <outputs>
+    <data name="output" format="json" label="Faces"/>
+  </outputs>
+  <help>
+      Face Detection
+  </help>
+</tool>
