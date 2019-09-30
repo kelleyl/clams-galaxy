@@ -167,3 +167,8 @@ webencodings==0.5.1
 webob==1.8.3
 whoosh==2.7.4
 wrapt==1.10.11
+imutils==0.5.2
+scikit-image==0.14.1
+dlib==19.16.0
+scenedetect==0.5.1.1
+git+https://github.com/clamsproject/clams-python-sdk.git@shot_detect
