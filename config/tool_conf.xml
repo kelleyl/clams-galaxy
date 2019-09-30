@@ -1,24 +1,25 @@
 <?xml version='1.0' encoding='utf-8'?>
 <toolbox monitor="true">
   <section id="getext" name="Get Data">
-    <tool file="data_source/upload.xml" />
+      <tool file="data_source/upload.xml" />
+      <tool file="clams/video_selector/video_selector.xml" />
   </section>
   <section id="send" name="Send Data">
     <tool file="cloud/send.xml" />
   </section>
   <section id="video" name="Video Tools">
-      <tool file="videotools2/app-slatedetection/config.xml" />
-      <tool file="videotools2/app-barsdetection/config.xml" />
-      <tool file="videotools2/app-facedetection/config.xml" />
-      <tool file="videotools2/app-slate-text-recognition/config.xml" />
-      <tool file="videotools2/app-tesseractocr/config.xml" />
-      <tool file="videotools2/app-textdetection/config.xml" />
-      <tool file="videotools/MMIF_wrapper.xml" />
+      <tool file="clams/app-barsdetection/config.xml" />
+      <tool file="clams/app-dlib-facedetection-wrapper/config.xml" />
+      <tool file="clams/app-east-wrapper/config.xml" />
+      <tool file="clams/app-scenedetect/config.xml" />
+      <tool file="clams/app-slatedetection/config.xml" />
+      <tool file="clams/app-tesseractocr-wrapper/config.xml" />
+
   </section>
   <section id="audio" name="Audio Tools">
   </section>
   <section id="text" name="Text Tools">
-      <tool file="texttools/app-spacywrapper/config"/>
+      <tool file="clams/app-spacyservice/config.xml"/>
   </section>
   <section id="Multimodal" name="Multimodal Tools">
   </section>
