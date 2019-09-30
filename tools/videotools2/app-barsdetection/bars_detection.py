@@ -1,3 +1,5 @@
+import os
+
 import cv2
 import pickle
 
@@ -23,7 +25,7 @@ class BarsDetection(ClamApp):
         # this mock-up method always returns true
         return True
 
-    def annotate(self, mmif):
+    def annotate(self, mmif): #TODO fix this to check 1 frame per scene
         mmif = Mmif(mmif)
         video_filename = mmif.get_medium_location(MediaTypes.V)
         bars_output = self.run_bd(video_filename) #bars_output is a list of frame number interval tuples
@@ -44,7 +46,7 @@ class BarsDetection(ClamApp):
     def run_bd(video_filename):
         # detect bars and tones based on template match score compared with sample bar frame
         sample_ratio = 30
-        with open("../../../../../tool-data/video_tools/grey.p", "rb") as p:
+        with open(os.path.join(os.environ.get('__tool_directory__'), "video_tools", "grey.p"), "rb") as p:
             grey = pickle.load(p)
 
         def process_image(f):

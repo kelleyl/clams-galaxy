@@ -4,7 +4,7 @@
   </description>
   <command interpreter="python">MMIF_wrapper.py $input $output</command>
   <inputs>
-    <param name="input" type="data" format="jpg" label="Video Input"/>
+    <param name="input" type="data" format="mp4" label="Video Input"/>
   </inputs>
   <outputs>
     <data name="output" format="json" label="Wrapped MMIF"/>

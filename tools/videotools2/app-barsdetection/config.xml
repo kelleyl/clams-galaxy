@@ -1,6 +1,6 @@
 <tool id="bars" name="Bar Detection" version="0.0.1">
   <description>
-    detect bars using structural similarity.
+    detect bars using structural similarity, to a predefined bars frame
   </description>
   <command interpreter="python3">test.py $input $output</command>
   <inputs>

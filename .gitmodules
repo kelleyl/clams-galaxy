@@ -1,0 +1,24 @@
+[submodule "tools/videotools2/app-scenedetect"]
+	path = tools/videotools2/app-scenedetect
+	url = https://github.com/clamsproject/app-scenedetect.git
+[submodule "tools/clams/app-barsdetection"]
+	path = tools/clams/app-barsdetection
+	url = https://github.com/clamsproject/app-barsdetection.git
+[submodule "tools/clams/app-scenedetect"]
+	path = tools/clams/app-scenedetect
+	url = https://github.com/clamsproject/app-scenedetect.git
+[submodule "tools/clams/app-dlib-facedetection-wrapper"]
+	path = tools/clams/app-dlib-facedetection-wrapper
+	url = https://github.com/clamsproject/app-dlib-facedetection-wrapper.git
+[submodule "tools/clams/app-tesseractocr-wrapper"]
+	path = tools/clams/app-tesseractocr-wrapper
+	url = https://github.com/clamsproject/app-tesseractocr-wrapper.git
+[submodule "tools/clams/app-east-wrapper"]
+	path = tools/clams/app-east-wrapper
+	url = https://github.com/clamsproject/app-east-wrapper.git
+[submodule "tools/clams/app-slatedetection"]
+	path = tools/clams/app-slatedetection
+	url = https://github.com/clamsproject/app-slatedetection.git
+[submodule "tools/clams/app-spacyservice"]
+	path = tools/clams/app-spacyservice
+	url = https://github.com/kelleyl/app-spacyservice.git

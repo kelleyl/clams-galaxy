@@ -44,8 +44,8 @@ class FaceDetection(ClamApp):
 
     @staticmethod
     def run_FD(video_filename, mmif): # mmif here will be used for filtering out frames/
-        cnn_face_detector = dlib.cnn_face_detection_model_v1("../../../../../tool-data/video_tools/mmod_human_face_detector.dat")
-        sample_ratio = 60
+        cnn_face_detector = dlib.cnn_face_detection_model_v1("../../../../../tool-data/videotools2/mmod_human_face_detector.dat")
+        sample_ratio = 60 # TODO update this to search one per shot
         result = []
         def process_image(f):
             proc = cv2.cvtColor(f, cv2.COLOR_BGR2RGB)

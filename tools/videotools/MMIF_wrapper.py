@@ -13,13 +13,14 @@ class MMIF_wrapper(Service):
         super(MMIF_wrapper, self).__init__(media_path)
 
     def media_dict(self, media_path):
-        if media_path.endswith(".mp4"): #TODO support more file types
-            md["type"] = "audio-video"
+
 
         md = {}
+        if media_path.endswith(".mp4"): #TODO support more file types
+            md["type"] = "audio-video"
         md["id"] = 0
-        md["type"] = "image-only"
-        md["location"] = video_path
+        md["type"] = "audio-video"
+        md["location"] = media_path
         md["metadata"] = {}
         return md
 
