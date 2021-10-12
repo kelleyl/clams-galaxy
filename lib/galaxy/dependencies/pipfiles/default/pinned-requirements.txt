@@ -87,7 +87,7 @@ nodeenv==1.3.2
 nose==1.3.7
 numpy==1.15.3
 oauthlib==2.1.0
-opencv-python==3.4.3.18
+opencv-python==4.2.0.32
 openstacksdk==0.17.0
 os-client-config==1.31.2
 os-service-types==1.3.0
