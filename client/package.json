@@ -99,7 +99,7 @@
     "karma-qunit": "^1.2.1",
     "karma-webpack": "^4.0.0-rc.2",
     "mocha": "^5.2.0",
-    "node-sass": "^4.9.4",
+    "node-sass": "^7.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "phantomjs-polyfill": "0.0.2",
     "phantomjs-prebuilt": "^2.1.7",
